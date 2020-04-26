@@ -1,0 +1,24 @@
+Book
+-ID
+-ISBN (char)
+-Author (varchar)
+-Title (varchar)
+-Date (int)
+-Publisher (varchar)
+-Genre (varchar)
+-Pages (int)
+-Description (varchar)
+
+User
+-ID
+-IdentityCode (char)
+-Name (varchar)
+-Password (text)
+-Role (int)
+
+Copy
+-ID
+-Book_ISBN (char)
+-LibUser (int)
+-Taken (date)
+-Return (date)
