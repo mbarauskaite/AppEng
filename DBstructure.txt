@@ -19,6 +19,8 @@ User
 Copy
 -ID
 -Book_ISBN (char)
--LibUser (int)
+-Book_Author (varchar)
+-Book_Title (varchar)
+-User_ID (int)
 -Taken (date)
 -Return (date)
