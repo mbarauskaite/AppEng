@@ -1,0 +1,61 @@
+﻿@page
+@model Library.Pages.Copies.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Copy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!-- @Html.DisplayNameFor(model => model.Copy.Isbn) --> ISBN
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.Isbn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Copy.IsbnNavigation.Author)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.IsbnNavigation.Author)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Copy.IsbnNavigation.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.IsbnNavigation.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Copy.Taken)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.Taken)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Copy.Return)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.Return)
+        </dd>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Copy.IsbnNavigation)  ISBN Navigation
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.IsbnNavigation.Author)
+        </dd>*@
+        <dt>
+            <!-- @Html.DisplayNameFor(model => model.Copy.LibuserNavigation) -->User
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Copy.LibuserNavigation.Identitycode)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Copy.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

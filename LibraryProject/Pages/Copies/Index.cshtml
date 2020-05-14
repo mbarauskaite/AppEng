@@ -1,0 +1,72 @@
+﻿@page
+@model Library.Pages.Copies.IndexModel
+
+@{
+    ViewData["Title"] = "Copies";
+}
+
+<h2>Copies</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <!--  @Html.DisplayNameFor(model => model.Copy[0].Isbn) --> ISBN
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copy[0].IsbnNavigation.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copy[0].IsbnNavigation.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copy[0].Taken)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Copy[0].Return)
+            </th>
+            @*<th>
+             @Html.DisplayNameFor(model => model.Copy[0].IsbnNavigation)
+        </th>*@
+            <th>
+                <!-- @Html.DisplayNameFor(model => model.Copy[0].LibuserNavigation) --> User
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Copy) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Isbn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsbnNavigation.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsbnNavigation.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Taken)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Return)
+            </td>
+            @*<td>
+           @Html.DisplayFor(modelItem => item.IsbnNavigation.Author)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.LibuserNavigation.Identitycode)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
